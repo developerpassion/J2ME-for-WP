@@ -1,0 +1,390 @@
+/*
+ * Copyright  1990-2009 Sun Microsystems, Inc. All Rights Reserved.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER
+ * 
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License version
+ * 2 only, as published by the Free Software Foundation.
+ * 
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License version 2 for more details (a copy is
+ * included at /legal/license.txt).
+ * 
+ * You should have received a copy of the GNU General Public License
+ * version 2 along with this work; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA
+ * 
+ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa
+ * Clara, CA 95054 or visit www.sun.com if you need additional
+ * information or have any questions.
+ */
+
+/* This file is auto-generated. Do not edit*/
+
+
+#ifdef ROMIZING
+#include "ROMImageGenerated.hpp"
+
+
+/* ========================   Start block: data   ======================== */
+
+
+const int _rom_is_relaunchable = 1;
+const int _rom_data_block_src[] = {
+
+/* ==== DATA pass 0 starting ==== */
+
+	TEXT8(0x0047), 
+	ROM_BL(0x0010fff2,0xfff20010,SS),
+	(int) oopmap_TaskMirror,
+	DATA(0x0000005e), 
+	TEXT8(0x0061), 
+	ROM_BL(0x0028fffe,0xfffe0028,SS),
+	(int) oopmap_Empty,
+	TEXT8(0x0069), TEXT8(0x006b),    /* NULL */ 0,    /* NULL */ 0,
+	   /* NULL */ 0, HEAP(0x00000000),    /* NULL */ 0, 
+	TEXT8(0x0061), 
+	ROM_BL(0x0028fffd,0xfffd0028,SS),
+	(int) oopmap_Empty,
+	TEXT8(0x0078), TEXT8(0x007a),    /* NULL */ 0,    /* NULL */ 0,
+	HEAP(0x000000cd), HEAP(0x00000000),    /* NULL */ 0, 
+	TEXT8(0x0061), 
+	ROM_BL(0x0028fffc,0xfffc0028,SS),
+	(int) oopmap_Empty,
+	TEXT8(0x0087), TEXT8(0x0089),    /* NULL */ 0,    /* NULL */ 0,
+	   /* NULL */ 0, HEAP(0x00000000),    /* NULL */ 0, 
+	TEXT8(0x0061), 
+	ROM_BL(0x0028fffb,0xfffb0028,SS),
+	(int) oopmap_Empty,
+	TEXT8(0x0096), TEXT8(0x0098),    /* NULL */ 0,    /* NULL */ 0,
+	   /* NULL */ 0, HEAP(0x00000000),    /* NULL */ 0, 
+	TEXT8(0x0061), 
+	ROM_BL(0x0028fffe,0xfffe0028,SS),
+	(int) oopmap_Empty,
+	TEXT8(0x00a5), TEXT8(0x00a7),    /* NULL */ 0,    /* NULL */ 0,
+	   /* NULL */ 0, HEAP(0x00000000),    /* NULL */ 0, 
+	TEXT8(0x0061), 
+	ROM_BL(0x0028fffd,0xfffd0028,SS),
+	(int) oopmap_Empty,
+	TEXT8(0x00b4), TEXT8(0x00b6),    /* NULL */ 0,    /* NULL */ 0,
+	   /* NULL */ 0, HEAP(0x00000000),    /* NULL */ 0, 
+	TEXT8(0x0061), 
+	ROM_BL(0x0028fffc,0xfffc0028,SS),
+	(int) oopmap_Empty,
+	TEXT8(0x00c3), TEXT8(0x00c5),    /* NULL */ 0,    /* NULL */ 0,
+	   /* NULL */ 0, HEAP(0x00000000),    /* NULL */ 0, 
+	TEXT8(0x0061), 
+	ROM_BL(0x0028fffb,0xfffb0028,SS),
+	(int) oopmap_Empty,
+	TEXT8(0x00d2), TEXT8(0x00d4),    /* NULL */ 0,    /* NULL */ 0,
+	   /* NULL */ 0, HEAP(0x00000000),    /* NULL */ 0, 
+	TEXT8(0x0065), 
+	ROM_BL(0x0028ffff,0xffff0028,SS),
+	(int) oopmap_Empty,
+	TEXT8(0x004b), TEXT8(0x0161),    /* NULL */ 0,    /* NULL */ 0,
+	   /* NULL */ 0, HEAP(0x00000000), HEAP(0x00000000), 
+	DATA(0x00000000), 
+
+/* ==== DATA pass 1 starting ==== */
+
+	TEXT8(0x004e), 
+	ROM_BL(0x00340050,0x00500034,SS),
+	     0x00000028, TEXT8(0x0052), TEXT8(0x0054),    /* NULL */ 0,
+	   /* NULL */ 0, HEAP(0x00000064), HEAP(0x00000000),    /* NULL */ 0,
+	
+	ROM_BL(0x02050101,0x01010502,BBBB),
+	ROM_BL(0x01010100,0x00010101,BBBB),
+	ROM_BL(0x00000000,0x00000000,BBBB),
+	
+	TEXT8(0x004e), 
+	ROM_BL(0x002c0004,0x0004002c,SS),
+	     0x00000028, TEXT8(0x00ff), TEXT8(0x0101),    /* NULL */ 0,
+	   /* NULL */ 0,    /* NULL */ 0, HEAP(0x00000000),    /* NULL */ 0,
+	
+	ROM_BL(0x00000000,0x00000000,BBBB),
+	
+	TEXT8(0x004e), 
+	ROM_BL(0x002c000c,0x000c002c,SS),
+	     0x00000028, TEXT8(0x010e), TEXT8(0x0110),    /* NULL */ 0,
+	   /* NULL */ 0,    /* NULL */ 0, HEAP(0x00000000),    /* NULL */ 0,
+	
+	ROM_BL(0x00000000,0x00000000,BBBB),
+	
+	TEXT8(0x004e), 
+	ROM_BL(0x002c0004,0x0004002c,SS),
+	     0x00000028, TEXT8(0x0153), TEXT8(0x0155),    /* NULL */ 0,
+	   /* NULL */ 0,    /* NULL */ 0, HEAP(0x00000000),    /* NULL */ 0,
+	
+	ROM_BL(0x00000000,0x00000000,BBBB),
+	
+	TEXT8(0x004e), 
+	ROM_BL(0x002c0010,0x0010002c,SS),
+	     0x00000028, TEXT8(0x016e), TEXT8(0x0170),    /* NULL */ 0,
+	   /* NULL */ 0, HEAP(0x00000243), HEAP(0x00000000),    /* NULL */ 0,
+	
+	ROM_BL(0x01000000,0x00000001,BBBB),
+	
+	TEXT8(0x004e), 
+	ROM_BL(0x002c0010,0x0010002c,SS),
+	     0x00000028, TEXT8(0x017d), TEXT8(0x017f),    /* NULL */ 0,
+	   /* NULL */ 0,    /* NULL */ 0, HEAP(0x00000000),    /* NULL */ 0,
+	
+	ROM_BL(0x01020000,0x00000201,BBBB),
+	
+	TEXT8(0x004e), 
+	ROM_BL(0x002c0008,0x0008002c,SS),
+	     0x00000028, TEXT8(0x02a3), TEXT8(0x02a5),    /* NULL */ 0,
+	   /* NULL */ 0,    /* NULL */ 0, HEAP(0x00000000), DATA(0x00000197),
+	
+	ROM_BL(0x00000000,0x00000000,BBBB),
+	
+	TEXT8(0x004e), 
+	ROM_BL(0x002c000c,0x000c002c,SS),
+	     0x00000028, TEXT8(0x02c6), TEXT8(0x02c8),    /* NULL */ 0,
+	   /* NULL */ 0,    /* NULL */ 0, HEAP(0x00000000), DATA(0x0000008d),
+	
+	ROM_BL(0x00000000,0x00000000,BBBB),
+	
+	TEXT8(0x004e), 
+	ROM_BL(0x002c0008,0x0008002c,SS),
+	     0x00000028, TEXT8(0x02d5), TEXT8(0x02d7),    /* NULL */ 0,
+	   /* NULL */ 0,    /* NULL */ 0, HEAP(0x00000000),    /* NULL */ 0,
+	
+	ROM_BL(0x00000000,0x00000000,BBBB),
+	
+	TEXT8(0x004e), 
+	ROM_BL(0x002c000c,0x000c002c,SS),
+	     0x00000028, TEXT8(0x02e4), TEXT8(0x02e6),    /* NULL */ 0,
+	   /* NULL */ 0,    /* NULL */ 0, HEAP(0x00000000), HEAP(0x000003a3),
+	
+	ROM_BL(0x00000000,0x00000000,BBBB),
+	
+	TEXT8(0x004e), 
+	ROM_BL(0x002c0008,0x0008002c,SS),
+	     0x00000028, TEXT8(0x02f3), TEXT8(0x02f5),    /* NULL */ 0,
+	   /* NULL */ 0,    /* NULL */ 0, HEAP(0x00000000), HEAP(0x000002bb),
+	
+	ROM_BL(0x00000000,0x00000000,BBBB),
+	
+	TEXT8(0x004e), 
+	ROM_BL(0x00300010,0x00100030,SS),
+	     0x00000028, TEXT8(0x032d), TEXT8(0x032f),    /* NULL */ 0,
+	   /* NULL */ 0,    /* NULL */ 0, DATA(0x0000015d), HEAP(0x000002dc),
+	
+	ROM_BL(0x01010100,0x00010101,BBBB),
+	ROM_BL(0x00000000,0x00000000,BBBB),
+	
+	TEXT8(0x004e), 
+	ROM_BL(0x002c000c,0x000c002c,SS),
+	     0x00000028, TEXT8(0x0388), TEXT8(0x038a),    /* NULL */ 0,
+	   /* NULL */ 0, HEAP(0x000003af), HEAP(0x00000000),    /* NULL */ 0,
+	
+	ROM_BL(0x02000000,0x00000002,BBBB),
+	
+	TEXT8(0x004e), 
+	ROM_BL(0x002c000c,0x000c002c,SS),
+	     0x00000028, TEXT8(0x03c8), TEXT8(0x03ca),    /* NULL */ 0,
+	   /* NULL */ 0,    /* NULL */ 0, HEAP(0x00000000), HEAP(0x0000038c),
+	
+	ROM_BL(0x01000000,0x00000001,BBBB),
+	
+	TEXT8(0x004e), 
+	ROM_BL(0x002c0004,0x0004002c,SS),
+	     0x00000028, TEXT8(0x040c), TEXT8(0x040e),    /* NULL */ 0,
+	   /* NULL */ 0,    /* NULL */ 0, HEAP(0x00000000),    /* NULL */ 0,
+	
+	ROM_BL(0x00000000,0x00000000,BBBB),
+	
+	TEXT8(0x004e), 
+	ROM_BL(0x002c0004,0x0004002c,SS),
+	     0x00000028, TEXT8(0x0463), TEXT8(0x0465),    /* NULL */ 0,
+	   /* NULL */ 0,    /* NULL */ 0, HEAP(0x00000000),    /* NULL */ 0,
+	
+	ROM_BL(0x00000000,0x00000000,BBBB),
+	
+	TEXT8(0x004e), 
+	ROM_BL(0x002c0010,0x0010002c,SS),
+	     0x00000028, TEXT8(0x04e6), TEXT8(0x04e8),    /* NULL */ 0,
+	   /* NULL */ 0,    /* NULL */ 0, HEAP(0x00000000),    /* NULL */ 0,
+	
+	ROM_BL(0x01000000,0x00000001,BBBB),
+	
+	TEXT8(0x004e), 
+	ROM_BL(0x00300014,0x00140030,SS),
+	     0x00000028, TEXT8(0x059a), TEXT8(0x059c),    /* NULL */ 0,
+	   /* NULL */ 0, HEAP(0x000003c4), HEAP(0x00000000),    /* NULL */ 0,
+	
+	ROM_BL(0x02010100,0x00010102,BBBB),
+	ROM_BL(0x00000000,0x00000000,BBBB),
+	
+	TEXT8(0x004e), 
+	ROM_BL(0x002c0008,0x0008002c,SS),
+	     0x00000028, TEXT8(0x05c7), TEXT8(0x05c9),    /* NULL */ 0,
+	   /* NULL */ 0,    /* NULL */ 0, HEAP(0x00000000), HEAP(0x00000376),
+	
+	ROM_BL(0x00000000,0x00000000,BBBB),
+	
+	HEAP(0x00000000), TEXT8(0x00e6),      0x00000000, 
+	HEAP(0x0000000b), TEXT8(0x00f2),      0x00000000, 
+	HEAP(0x00000016), TEXT8(0x011d),      0x00000000, 
+	HEAP(0x00000022), TEXT8(0x0134),      0x00000000, 
+	HEAP(0x0000002d), TEXT8(0x0143),      0x00000000, 
+	HEAP(0x00000038), TEXT8(0x018b),      0x00000000, 
+	HEAP(0x00000043), TEXT8(0x019a),      0x00000000, 
+	HEAP(0x0000004e), TEXT8(0x01a9),      0x00000000, 
+	HEAP(0x00000059), TEXT8(0x01b8),      0x00000000, 
+	HEAP(0x0000028f), TEXT8(0x06e8),      0x00000000, 
+	TEXT8(0x004e), 
+	ROM_BL(0x002c000c,0x000c002c,SS),
+	     0x00000028, TEXT8(0x0767), TEXT8(0x0769),    /* NULL */ 0,
+	   /* NULL */ 0,    /* NULL */ 0, HEAP(0x00000263),    /* NULL */ 0,
+	
+	ROM_BL(0x01010000,0x00000101,BBBB),
+	
+	TEXT8(0x004e), 
+	ROM_BL(0x00300010,0x00100030,SS),
+	     0x00000028, TEXT8(0x07bf), TEXT8(0x07c1),    /* NULL */ 0,
+	   /* NULL */ 0,    /* NULL */ 0, HEAP(0x00000238), DATA(0x0000006c),
+	
+	ROM_BL(0x01010100,0x00010101,BBBB),
+	ROM_BL(0x00000000,0x00000000,BBBB),
+	
+	TEXT8(0x004e), 
+	ROM_BL(0x00300014,0x00140030,SS),
+	     0x00000028, TEXT8(0x07ec), TEXT8(0x07ee),    /* NULL */ 0,
+	   /* NULL */ 0,    /* NULL */ 0, HEAP(0x000002e7),    /* NULL */ 0,
+	
+	ROM_BL(0x01020100,0x00010201,BBBB),
+	ROM_BL(0x00000000,0x00000000,BBBB),
+	
+	TEXT8(0x004e), 
+	ROM_BL(0x00300014,0x00140030,SS),
+	     0x00000028, TEXT8(0x0861), TEXT8(0x0863),    /* NULL */ 0,
+	   /* NULL */ 0,    /* NULL */ 0, DATA(0x00000169),    /* NULL */ 0,
+	
+	ROM_BL(0x01020100,0x00010201,BBBB),
+	ROM_BL(0x00000000,0x00000000,BBBB),
+	
+	TEXT8(0x004e), 
+	ROM_BL(0x002c000c,0x000c002c,SS),
+	     0x00000028, TEXT8(0x0885), TEXT8(0x0887),    /* NULL */ 0,
+	   /* NULL */ 0,    /* NULL */ 0, HEAP(0x00000263),    /* NULL */ 0,
+	
+	ROM_BL(0x01000000,0x00000001,BBBB),
+	
+	TEXT8(0x004e), 
+	ROM_BL(0x002c0008,0x0008002c,SS),
+	     0x00000028, TEXT8(0x089e), TEXT8(0x08a0),    /* NULL */ 0,
+	   /* NULL */ 0,    /* NULL */ 0, HEAP(0x00000167),    /* NULL */ 0,
+	
+	ROM_BL(0x01000000,0x00000001,BBBB),
+	
+	TEXT8(0x004e), 
+	ROM_BL(0x002c0004,0x0004002c,SS),
+	     0x00000028, TEXT8(0x0912), TEXT8(0x0914),    /* NULL */ 0,
+	   /* NULL */ 0,    /* NULL */ 0, HEAP(0x00000000), HEAP(0x00000314),
+	
+	ROM_BL(0x00000000,0x00000000,BBBB),
+	
+	TEXT8(0x004e), 
+	ROM_BL(0x002c0004,0x0004002c,SS),
+	     0x00000028, TEXT8(0x092d), TEXT8(0x092f),    /* NULL */ 0,
+	   /* NULL */ 0,    /* NULL */ 0, HEAP(0x00000167), DATA(0x0000018c),
+	
+	ROM_BL(0x00000000,0x00000000,BBBB),
+	
+	TEXT8(0x004e), 
+	ROM_BL(0x00300018,0x00180030,SS),
+	     0x00000028, TEXT8(0x09be), TEXT8(0x09c0),    /* NULL */ 0,
+	   /* NULL */ 0,    /* NULL */ 0, HEAP(0x00000000),    /* NULL */ 0,
+	
+	ROM_BL(0x02010100,0x00010102,BBBB),
+	ROM_BL(0x00000000,0x00000000,BBBB),
+	
+	HEAP(0x00000064), TEXT8(0x0255),      0x00000000, 
+	HEAP(0x0000006e), TEXT8(0x0261),      0x00000000, 
+	HEAP(0x00000079), TEXT8(0x0272),      0x00000000, 
+	HEAP(0x00000084), TEXT8(0x0282),      0x00000000, 
+	HEAP(0x00000090), TEXT8(0x0296),      0x00000000, 
+	HEAP(0x0000009b), TEXT8(0x02b1),      0x00000000, 
+	HEAP(0x000000a9), TEXT8(0x0301),      0x00000000, 
+	HEAP(0x000000b6), TEXT8(0x0316),      0x00000000, 
+	HEAP(0x000000c2), TEXT8(0x0346),      0x00000000, 
+	HEAP(0x000000cd), TEXT8(0x036f),      0x00000000, 
+	HEAP(0x000000d7), TEXT8(0x037b),      0x00000000, 
+	HEAP(0x000000e3), TEXT8(0x03a0),      0x00000000, 
+	HEAP(0x000000ee), TEXT8(0x03af),      0x00000000, 
+	HEAP(0x000000f9), TEXT8(0x03be),      0x00000000, 
+	HEAP(0x00000104), TEXT8(0x03da),      0x00000000, 
+	HEAP(0x0000010f), TEXT8(0x03e6),      0x00000000, 
+	HEAP(0x0000011a), TEXT8(0x03ef),      0x00000000, 
+	HEAP(0x00000125), TEXT8(0x03fd),      0x00000000, 
+	HEAP(0x00000130), TEXT8(0x041a),      0x00000000, 
+	HEAP(0x0000013b), TEXT8(0x0444),      0x00000000, 
+	HEAP(0x00000146), TEXT8(0x0453),      0x00000000, 
+	HEAP(0x00000151), TEXT8(0x046e),      0x00000000, 
+	HEAP(0x0000015c), TEXT8(0x047c),      0x00000000, 
+	HEAP(0x00000167), TEXT8(0x048b),      0x00000000, 
+	HEAP(0x00000172), TEXT8(0x049c),      0x00000000, 
+	HEAP(0x0000017d), TEXT8(0x04b3),      0x00000000, 
+	HEAP(0x00000188), TEXT8(0x04c2),      0x00000000, 
+	HEAP(0x00000193), TEXT8(0x04f4),      0x00000000, 
+	HEAP(0x0000019e), TEXT8(0x04fd),      0x00000000, 
+	HEAP(0x000001a9), TEXT8(0x0525),      0x00000000, 
+	HEAP(0x000001b4), TEXT8(0x0534),      0x00000000, 
+	HEAP(0x000001bf), TEXT8(0x0547),      0x00000000, 
+	HEAP(0x000001ca), TEXT8(0x0558),      0x00000000, 
+	HEAP(0x000001d5), TEXT8(0x0563),      0x00000000, 
+	HEAP(0x000001e0), TEXT8(0x0572),      0x00000000, 
+	HEAP(0x000001eb), TEXT8(0x057f),      0x00000000, 
+	HEAP(0x000001f6), TEXT8(0x058e),      0x00000000, 
+	HEAP(0x00000201), TEXT8(0x05a8),      0x00000000, 
+	HEAP(0x0000020c), TEXT8(0x05b7),      0x00000000, 
+	HEAP(0x00000217), TEXT8(0x05d5),      0x00000000, 
+	HEAP(0x00000222), TEXT8(0x05e9),      0x00000000, 
+	HEAP(0x0000022d), TEXT8(0x05f4),      0x00000000, 
+	HEAP(0x00000238), TEXT8(0x0603),      0x00000000, 
+	HEAP(0x00000243), TEXT8(0x06ac),      0x00000000, 
+	HEAP(0x0000024d), TEXT8(0x06c6),      0x00000000, 
+	HEAP(0x00000258), TEXT8(0x06df),      0x00000000, 
+	HEAP(0x00000263), TEXT8(0x06f7),      0x00000000, 
+	HEAP(0x0000026e), TEXT8(0x070c),      0x00000000, 
+	HEAP(0x00000279), TEXT8(0x071a),      0x00000000, 
+	HEAP(0x00000284), TEXT8(0x072a),      0x00000000, 
+	HEAP(0x0000029a), TEXT8(0x0739),      0x00000000, 
+	HEAP(0x000002a5), TEXT8(0x0748),      0x00000000, 
+	HEAP(0x000002b0), TEXT8(0x0757),      0x00000000, 
+	HEAP(0x000002bb), TEXT8(0x077e),      0x00000000, 
+	HEAP(0x000002c6), TEXT8(0x078d),      0x00000000, 
+	HEAP(0x000002d1), TEXT8(0x079c),      0x00000000, 
+	HEAP(0x000002dc), TEXT8(0x07af),      0x00000000, 
+	HEAP(0x000002e7), TEXT8(0x07d8),      0x00000000, 
+	HEAP(0x000002f2), TEXT8(0x0803),      0x00000000, 
+	HEAP(0x000002fe), TEXT8(0x080f),      0x00000000, 
+	HEAP(0x00000309), TEXT8(0x081e),      0x00000000, 
+	HEAP(0x00000314), TEXT8(0x082d),      0x00000000, 
+	HEAP(0x0000031f), TEXT8(0x083c),      0x00000000, 
+	HEAP(0x0000032a), TEXT8(0x084b),      0x00000000, 
+	HEAP(0x00000335), TEXT8(0x0878),      0x00000000, 
+	HEAP(0x00000340), TEXT8(0x08b2),      0x00000000, 
+	HEAP(0x0000034b), TEXT8(0x08d2),      0x00000000, 
+	HEAP(0x00000356), TEXT8(0x08dd),      0x00000000, 
+	HEAP(0x00000361), TEXT8(0x0902),      0x00000000, 
+	HEAP(0x0000036c), TEXT8(0x0920),      0x00000000, 
+	HEAP(0x00000376), TEXT8(0x0940),      0x00000000, 
+	HEAP(0x00000381), TEXT8(0x0954),      0x00000000, 
+	HEAP(0x0000038c), TEXT8(0x0963),      0x00000000, 
+	HEAP(0x00000397), TEXT8(0x096c),      0x00000000, 
+	HEAP(0x000003a3), TEXT8(0x0982),      0x00000000, 
+	HEAP(0x000003af), TEXT8(0x0996),      0x00000000, 
+	HEAP(0x000003b9), TEXT8(0x09a2),      0x00000000, 
+	HEAP(0x000003c4), TEXT8(0x09b1),      0x00000000, 
+	HEAP(0x000003ce), TEXT8(0x09d2),      0x00000000, 
+};
+int _rom_data_block[678];
+const int _rom_data_block_size = 2712;
+const int _rom_data_block_scanned_size = 380;
+#endif // ROMIZING

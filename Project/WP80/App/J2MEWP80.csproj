@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  J2MEWP: Windows Phone 8.0 Silverlight app (C#), also runs on 8.1 / W10M.
+  UI only; the VM, MIDP, audio and the game library live in the C++ component
+  J2MEWPRuntime (WP80/Runtime). GamePage / SettingsPage / GameItem are shared
+  with the WP8.1 app (linked from ..\..\WP81\App). ARM only.
+-->
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">ARM</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7A2D9F31-4C1B-4E8A-B1F0-2E5D6C7A8B80}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>J2MEWP81</RootNamespace>
+    <AssemblyName>J2MEWP80</AssemblyName>
+    <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>J2MEWP80_$(Configuration)_$(Platform).xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>J2MEWP81.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <DefaultLanguage>en-US</DefaultLanguage>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|ARM' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\ARM\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|ARM' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\ARM\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WifiReceiver.cs" />
+    <Compile Include="FontAtlas.cs" />
+    <!-- shared with the WP8.1 app -->
+    <Compile Include="..\..\WP81\App\GamePage.xaml.cs"><Link>GamePage.xaml.cs</Link><DependentUpon>GamePage.xaml</DependentUpon></Compile>
+    <Compile Include="..\..\WP81\App\SettingsPage.xaml.cs"><Link>SettingsPage.xaml.cs</Link><DependentUpon>SettingsPage.xaml</DependentUpon></Compile>
+    <Compile Include="..\..\WP81\App\GameItem.cs"><Link>GameItem.cs</Link></Compile>
+    <Compile Include="..\..\WP81\App\Properties\AssemblyInfo.cs"><Link>Properties\AssemblyInfo.cs</Link></Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\..\WP81\App\GamePage.xaml">
+      <Link>GamePage.xaml</Link>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="..\..\WP81\App\SettingsPage.xaml">
+      <Link>SettingsPage.xaml</Link>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <!-- Assets shared with the W10M app (icons from tools/make_app_icons.py, MIDP java home seed)
+       are copied into Assets\ before the build: the XAP packager does not take linked content.
+       The copies are gitignored. -->
+  <ItemGroup>
+    <J2MEWPSharedAsset Include="Icons\Square150x150Logo.png"><To>Assets\Square150x150Logo.png</To></J2MEWPSharedAsset>
+    <J2MEWPSharedAsset Include="Icons\Square44x44Logo.png"><To>Assets\Square44x44Logo.png</To></J2MEWPSharedAsset>
+    <J2MEWPSharedAsset Include="Icons\Wide310x150Logo.png"><To>Assets\Wide310x150Logo.png</To></J2MEWPSharedAsset>
+    <J2MEWPSharedAsset Include="Icons\StoreLogo.png"><To>Assets\StoreLogo.png</To></J2MEWPSharedAsset>
+    <Content Include="SplashScreenImage.jpg" />
+    <J2MEWPSharedAsset Include="Icons\SplashScreen.png"><To>Assets\SplashScreen.png</To></J2MEWPSharedAsset>
+    <J2MEWPSharedAsset Include="Icons\SplashScreen.scale-240.png"><To>Assets\SplashScreen.scale-240.png</To></J2MEWPSharedAsset>
+    <J2MEWPSharedAsset Include="Icons\Square150x150Logo.png"><To>Assets\ApplicationIcon.png</To></J2MEWPSharedAsset>
+    <J2MEWPSharedAsset Include="Icons\Square150x150Logo.png"><To>Assets\Tiles\FlipCycleTileMedium.png</To></J2MEWPSharedAsset>
+    <J2MEWPSharedAsset Include="Icons\Square44x44Logo.png"><To>Assets\Tiles\FlipCycleTileSmall.png</To></J2MEWPSharedAsset>
+    <J2MEWPMidpAsset Include="..\..\W10M\App\Assets\midp\**\*" />
+  </ItemGroup>
+  <Target Name="J2MEWPCopySharedAssets" BeforeTargets="BeforeBuild;PrepareForBuild">
+    <Copy SourceFiles="@(J2MEWPSharedAsset)" DestinationFiles="@(J2MEWPSharedAsset->'%(To)')" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(J2MEWPMidpAsset)" DestinationFiles="@(J2MEWPMidpAsset->'Assets\midp\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+    <ItemGroup>
+      <Content Include="@(J2MEWPSharedAsset->'%(To)')" />
+      <Content Include="@(J2MEWPMidpAsset->'Assets\midp\%(RecursiveDir)%(Filename)%(Extension)')" />
+    </ItemGroup>
+  </Target>
+  <ItemGroup>
+    <Content Include="Assets\AppBar\*.png" />
+    <Content Include="Assets\FileJar*.png" />
+    <Content Include="Assets\fontcache.bin" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Runtime\J2MEWPRuntime.vcxproj">
+      <Project>{6F1C2B3A-7D44-4E59-9A21-0C3B5E8D1A83}</Project>
+      <Name>J2MEWPRuntime</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
+  <ProjectExtensions />
+</Project>

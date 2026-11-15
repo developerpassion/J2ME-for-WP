@@ -1,0 +1,10 @@
+#pragma once
+#include <collection.h>
+#include <ppltasks.h>
+#include <robuffer.h>
+#include <wrl/client.h>
+#include <memory>
+#include <mutex>
+#include <string>
+#include <vector>
+#include <stdio.h>

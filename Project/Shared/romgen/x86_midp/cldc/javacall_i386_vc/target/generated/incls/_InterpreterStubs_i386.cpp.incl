@@ -1,0 +1,4 @@
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/cpu/i386/SourceAssembler_i386.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/cpu/i386/SourceMacros_i386.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/interpreter/InterpreterStubs.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/utilities/Generator.hpp"

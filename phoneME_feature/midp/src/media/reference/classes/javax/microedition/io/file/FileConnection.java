@@ -1,0 +1,37 @@
+/* J2MEWP: JSR 75 FileConnection API only: listRoots() is empty and Connector.open of a file URL fails */
+package javax.microedition.io.file;
+import java.io.*;
+import java.util.Enumeration;
+public interface FileConnection extends javax.microedition.io.StreamConnection {
+    boolean isOpen();
+    InputStream openInputStream() throws IOException;
+    DataInputStream openDataInputStream() throws IOException;
+    OutputStream openOutputStream() throws IOException;
+    DataOutputStream openDataOutputStream() throws IOException;
+    OutputStream openOutputStream(long byteOffset) throws IOException;
+    long totalSize();
+    long availableSize();
+    long usedSize();
+    long directorySize(boolean includeSubDirs) throws IOException;
+    long fileSize() throws IOException;
+    boolean canRead();
+    boolean canWrite();
+    boolean isHidden();
+    void setReadable(boolean readable) throws IOException;
+    void setWritable(boolean writable) throws IOException;
+    void setHidden(boolean hidden) throws IOException;
+    Enumeration list() throws IOException;
+    Enumeration list(String filter, boolean includeHidden) throws IOException;
+    void create() throws IOException;
+    void mkdir() throws IOException;
+    boolean exists();
+    boolean isDirectory();
+    void delete() throws IOException;
+    void rename(String newName) throws IOException;
+    void truncate(long byteOffset) throws IOException;
+    void setFileConnection(String fileName) throws IOException;
+    String getName();
+    String getPath();
+    String getURL();
+    long lastModified();
+}

@@ -1,0 +1,6 @@
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/float/FloatSupport.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/utilities/Generator.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/interpreter/TemplateTable.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/interpreter/InterpreterGenerator.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/cpu/arm/SourceMacros_arm.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/float/FloatNatives.hpp"

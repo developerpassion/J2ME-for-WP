@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Thiết lập dùng chung cho mọi project native của J2MEWP (WP80 / WP81 / W10M) -->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="UserMacros">
+    <J2MEWPRoot>$(MSBuildThisFileDirectory)..\..\..\</J2MEWPRoot>
+    <PhoneMERoot>$(J2MEWPRoot)phoneME_feature\</PhoneMERoot>
+    <J2MESharedDir>$(MSBuildThisFileDirectory)..\</J2MESharedDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(J2MESharedDir)host;$(J2MESharedDir)javacall_winphone\inc;$(J2MESharedDir)javacall_winphone\src;$(PhoneMERoot)javacall\interface;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>J2MEWP=1;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+</Project>

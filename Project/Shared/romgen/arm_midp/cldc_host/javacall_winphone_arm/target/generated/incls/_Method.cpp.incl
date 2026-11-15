@@ -1,0 +1,4 @@
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/handles/Signature.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/utilities/BytecodePrintClosure.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/handles/ObjNear.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/handles/StackmapList.hpp"

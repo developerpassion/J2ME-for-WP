@@ -1,0 +1,41 @@
+# local builds and test games
+games/*.jar
+games/*.jad
+Project/out/
+Project/tools/*.log
+
+# W10M signing password (local only; the .pfx itself is published)
+Project/W10M/App/Signing/*.bak
+Project/W10M/App/Signing/Signing.local.props
+
+# WP8.1 app: assets copied from the W10M app at build time (J2MEWPCopySharedAssets)
+Project/WP81/App/Assets/midp/
+Project/WP81/App/Assets/Tiles/
+Project/WP81/App/Assets/Square150x150Logo.png
+Project/WP81/App/Assets/Square44x44Logo.png
+Project/WP81/App/Assets/Wide310x150Logo.png
+Project/WP81/App/Assets/StoreLogo.png
+Project/WP81/App/Assets/SplashScreen.png
+Project/WP81/App/Assets/SplashScreen.scale-240.png
+Project/WP81/App/Assets/ApplicationIcon.png
+Project/WP81/bin/
+Project/WP81/obj/
+Project/WP81/App/Bin/
+Project/WP81/App/obj/
+Project/WP80/App/Assets/midp/
+Project/WP80/App/Assets/Tiles/
+Project/WP80/App/Assets/Square150x150Logo.png
+Project/WP80/App/Assets/Square44x44Logo.png
+Project/WP80/App/Assets/Wide310x150Logo.png
+Project/WP80/App/Assets/StoreLogo.png
+Project/WP80/App/Assets/SplashScreen.png
+Project/WP80/App/Assets/SplashScreen.scale-240.png
+Project/WP80/App/Assets/ApplicationIcon.png
+Project/WP80/bin/
+Project/WP80/obj/
+Project/WP80/App/Bin/
+Project/WP80/App/obj/
+
+# compiled test MIDlets (rebuilt from the .java next to them)
+Project/tools/test/*/c/
+Project/tools/test/*/p/

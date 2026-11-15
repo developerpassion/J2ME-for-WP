@@ -1,0 +1,6 @@
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/verifier/Verifier.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/runtime/StackMapDefinitions.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/verifier/VerifierDefinitions.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/verifier/VerifierFrame.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/verifier/VerifyMethodCodes.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/handles/Signature.hpp"

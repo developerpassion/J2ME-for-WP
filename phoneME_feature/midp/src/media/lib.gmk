@@ -1,0 +1,173 @@
+#
+#  
+#
+# Copyright  1990-2009 Sun Microsystems, Inc. All Rights Reserved.
+# DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER
+# 
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License version
+# 2 only, as published by the Free Software Foundation.
+# 
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# General Public License version 2 for more details (a copy is
+# included at /legal/license.txt).
+# 
+# You should have received a copy of the GNU General Public License
+# version 2 along with this work; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+# 02110-1301 USA
+# 
+# Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa
+# Clara, CA 95054 or visit www.sun.com if you need additional
+# information or have any questions.
+#
+######################################################################
+#
+# Module's Component Configuration file
+#
+# Remember: It is up to the module itself to impose rules of
+# how to compile the options. All the global Makefile needs
+# is the final def. of Java and native file lists and some
+# other def. (like VPATH)
+######################################################################
+
+# Adds to global SUBSYSTEMS list
+#
+SUBSYSTEM_MEDIA = media
+
+SUBSYSTEMS += $(SUBSYSTEM_MEDIA)
+
+# Javadoc source path
+SUBSYSTEM_MEDIA_SOURCEPATH += $(SUBSYSTEM_DIR)/media/reference/classes
+
+SUBSYSTEM_MEDIA_PACKAGES = \
+    javax.microedition.media javax.microedition.media.control javax.wireless.messaging
+
+MIDP_JAVADOC_SOURCEPATH += $(SUBSYSTEM_MEDIA_SOURCEPATH)
+MIDP_JAVADOC_PACKAGES +=  $(SUBSYSTEM_MEDIA_PACKAGES)
+
+MIDP_JAVADOC_ALL += \
+        -group "Media stuff" \
+	$(shell echo $(SUBSYSTEM_MEDIA_PACKAGES)|tr ' ' $(PATHSEP))
+
+# There are no modules for subsystem ( media )
+#
+
+# vpath for ( media ) subsystem
+#
+# no native sources for media, therefore empty
+
+# Java files for the ( media ) subsystem
+#
+SUBSYSTEM_MEDIA_JAVA_FILES += \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/media/Control.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/media/Controllable.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/media/Manager.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/media/MediaException.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/media/Player.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/media/PlayerListener.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/media/control/ToneControl.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/media/control/VolumeControl.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/com/sun/j2mewp/media/AudioPlayer.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/com/sun/j2mewp/media/DeviceHw.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/wireless/messaging/Message.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/wireless/messaging/TextMessage.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/wireless/messaging/BinaryMessage.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/wireless/messaging/MessageListener.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/wireless/messaging/MessageConnection.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/com/sun/j2mewp/messaging/StubMessage.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/com/sun/j2mewp/messaging/StubMessageConnection.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/com/sun/midp/io/j2me/sms/Protocol.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/com/sun/midp/io/j2me/cbs/Protocol.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/com/nokia/mid/ui/FullCanvas.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/com/nokia/mid/ui/DeviceControl.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/com/nokia/mid/ui/DirectGraphics.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/com/nokia/mid/ui/DirectUtils.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/com/sun/j2mewp/nokia/DirectGraphicsImpl.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/com/nokia/mid/sound/Sound.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/com/nokia/mid/sound/SoundListener.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/java/lang/StringBuilder.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/com/nokia/mid/ui/VirtualKeyboard.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/com/nokia/mid/ui/KeyboardVisibilityListener.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/com/nokia/mid/ui/orientation/Orientation.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/com/nokia/mid/ui/orientation/OrientationListener.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/com/samsung/util/AudioClip.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/com/samsung/util/Vibration.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/com/samsung/util/LCDLight.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/com/siemens/mp/game/Light.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/com/siemens/mp/game/Vibrator.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/com/siemens/mp/game/Sound.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/com/motorola/multimedia/Vibrator.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/com/motorola/multimedia/Lighting.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/bluetooth/BluetoothConnectionException.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/bluetooth/BluetoothStateException.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/bluetooth/DataElement.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/bluetooth/DeviceClass.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/bluetooth/DiscoveryAgent.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/bluetooth/DiscoveryListener.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/bluetooth/L2CAPConnection.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/bluetooth/L2CAPConnectionNotifier.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/bluetooth/LocalDevice.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/bluetooth/RemoteDevice.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/bluetooth/ServiceRecord.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/bluetooth/ServiceRegistrationException.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/bluetooth/UUID.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/io/file/ConnectionClosedException.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/io/file/FileConnection.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/io/file/FileSystemListener.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/io/file/FileSystemRegistry.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/io/file/IllegalModeException.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/m3g/AnimationController.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/m3g/AnimationTrack.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/m3g/Appearance.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/m3g/Background.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/m3g/Camera.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/m3g/CompositingMode.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/m3g/Fog.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/m3g/Graphics3D.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/m3g/Group.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/m3g/Image2D.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/m3g/IndexBuffer.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/m3g/KeyframeSequence.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/m3g/Light.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/m3g/Loader.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/m3g/Material.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/m3g/Mesh.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/m3g/MorphingMesh.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/m3g/Node.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/m3g/Object3D.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/m3g/PolygonMode.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/m3g/RayIntersection.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/m3g/SkinnedMesh.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/m3g/Sprite3D.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/m3g/Texture2D.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/m3g/Transform.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/m3g/Transformable.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/m3g/TriangleStripArray.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/m3g/VertexArray.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/m3g/VertexBuffer.java \
+     $(SUBSYSTEM_DIR)/media/reference/classes/javax/microedition/m3g/World.java
+# J2MEWP: vendor API stubs (Nokia S40 touch, Samsung, Siemens, Motorola): no-op
+#         light/vibration, Samsung AudioClip + Siemens Sound use javax.microedition.media
+# J2MEWP: java.lang.StringBuilder (games compiled with javac 1.5+ use it for string concatenation)
+# J2MEWP: JSR 120 stub (javax.wireless.messaging + sms:/cbs: protocols, no real SMS)
+# J2MEWP: Nokia UI API (com.nokia.mid.ui, com.nokia.mid.sound), pure Java on MIDP 2.0
+# J2MEWP: JSR 82 / JSR 75 / JSR 184 API stubs (no Bluetooth, no file roots, M3G draws nothing)
+
+# J2MEWP: natives of AudioPlayer -> host audio backend (j2mewp_audio.h)
+vpath % $(SUBSYSTEM_DIR)/media/reference/native
+SUBSYSTEM_MEDIA_EXTRA_INCLUDES += -I$(SUBSYSTEM_DIR)/media/include
+SUBSYSTEM_MEDIA_NATIVE_FILES += j2mewp_media_kni.c
+
+# Native files for the ( media ) subsystem
+#
+#####  no native sources for media, therefore empty
+
+############################################################
+# Native files under MEDIA subsystem
+############################################################
+##  no native sources for media, therefore empty
+
+

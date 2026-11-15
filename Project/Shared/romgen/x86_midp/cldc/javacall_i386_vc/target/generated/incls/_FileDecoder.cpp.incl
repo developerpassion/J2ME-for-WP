@@ -1,0 +1,5 @@
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/memory/FileDecoderDesc.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/runtime/JarFileParser.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/runtime/FileDecoder.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/memory/InflaterDesc.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/runtime/Inflate.hpp"

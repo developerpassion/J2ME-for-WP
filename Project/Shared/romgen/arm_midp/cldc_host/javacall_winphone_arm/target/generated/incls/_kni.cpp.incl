@@ -1,0 +1,5 @@
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/handles/JavaClassObj.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/natives/JniImpl.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/natives/KniImpl.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/runtime/Throwable.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/handles/EntryActivation.hpp"

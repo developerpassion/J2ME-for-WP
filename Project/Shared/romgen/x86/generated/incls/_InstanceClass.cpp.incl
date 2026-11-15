@@ -1,0 +1,8 @@
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/handles/JavaClassObj.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/runtime/Scheduler.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/verifier/Verifier.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/handles/ClassParserState.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/debugger/LineVarTable.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/utilities/EventLogger.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/runtime/ClassFileParser.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/handles/EntryActivation.hpp"

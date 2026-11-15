@@ -1,0 +1,7 @@
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/memory/NearClassDesc.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/handles/NearClass.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/handles/ObjNear.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/handles/JavaClassObj.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/handles/EntryActivation.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/handles/ExecutionStack.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/handles/StackmapList.hpp"

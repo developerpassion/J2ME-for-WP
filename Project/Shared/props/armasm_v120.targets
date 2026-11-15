@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  J2MEWP: minimal armasm step for the VS2013 (v120) toolset, which has no
+  marmasm BuildCustomization. Assembles every @(MARMASM) item into $(IntDir)
+  and feeds the objects to Lib/Link. Used by the WP8.1 Silverlight projects.
+  Item metadata J2MEWPPatchArmObj="true" runs tools/patch_arm_obj.py on the object
+  (fixes armasm's Thumb section flag + internal BL relocations, see PLAN.md).
+-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <J2MEWPArmasmExe Condition="'$(J2MEWPArmasmExe)'==''">$(VCInstallDir)bin\x86_arm\armasm.exe</J2MEWPArmasmExe>
+  </PropertyGroup>
+
+  <Target Name="J2MEWPArmasm"
+          BeforeTargets="Lib;Link"
+          AfterTargets="ClCompile"
+          Condition="'@(MARMASM)' != ''"
+          Inputs="@(MARMASM)"
+          Outputs="@(MARMASM->'$(IntDir)%(Filename).obj')">
+    <MakeDir Directories="$(IntDir)" />
+    <!-- armasm loads mspdb*/msobj* from <VC>\bin: put its folder and the parent on PATH
+         (needed when the active toolset is another VC version, e.g. v110_wp80 + VS2013 armasm) -->
+    <PropertyGroup>
+      <_J2MEWPArmasmDir>$([System.IO.Path]::GetDirectoryName('$(J2MEWPArmasmExe)'))</_J2MEWPArmasmDir>
+    </PropertyGroup>
+    <Exec Command="set &quot;PATH=$(_J2MEWPArmasmDir);$(_J2MEWPArmasmDir)\..;$(_J2MEWPArmasmDir)\..\..\..\Common7\IDE;%PATH%&quot; &amp;&amp; &quot;$(J2MEWPArmasmExe)&quot; -nologo -ignore 4509 -o &quot;$(IntDir)%(MARMASM.Filename).obj&quot; &quot;%(MARMASM.FullPath)&quot;" />
+    <Exec Condition="'%(MARMASM.J2MEWPPatchArmObj)'=='true'"
+          Command="python3 &quot;$(J2MESharedDir)..\tools\patch_arm_obj.py&quot; &quot;$(IntDir)%(MARMASM.Filename).obj&quot;" />
+  </Target>
+
+  <!-- always add the objects (also when the target above is skipped as up to date) -->
+  <Target Name="J2MEWPArmasmObjects" BeforeTargets="Lib;Link" AfterTargets="J2MEWPArmasm" Condition="'@(MARMASM)' != ''">
+    <ItemGroup>
+      <Lib Include="@(MARMASM->'$(IntDir)%(Filename).obj')" />
+      <Link Include="@(MARMASM->'$(IntDir)%(Filename).obj')" />
+    </ItemGroup>
+  </Target>
+</Project>

@@ -1,0 +1,4 @@
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/natives/sni.h"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/handles/ExecutionStack.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/utilities/StackUtils.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/verifier/Verifier.hpp"

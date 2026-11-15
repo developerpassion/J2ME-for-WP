@@ -1,0 +1,6 @@
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/runtime/JVM.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/memory/VMEventDesc.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/memory/VMEventModifierDesc.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/memory/RefNodeDesc.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/memory/PacketDataBufferDesc.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/memory/OopDesc.inline.hpp"

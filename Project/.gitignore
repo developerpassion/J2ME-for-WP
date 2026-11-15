@@ -1,0 +1,9 @@
+bin/
+obj/
+*.user
+.vs/
+AppPackages/
+BundleArtifacts/
+*.VC.db
+*.VC.opendb
+Generated Files/

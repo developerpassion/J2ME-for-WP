@@ -1,0 +1,4 @@
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/utilities/Timer.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/runtime/JVM.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/utilities/EventLogger.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/handles/Signature.hpp"

@@ -1,0 +1,127 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="J2MEWP81.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="12,17,0,12">
+            <TextBlock Text="J2ME WINDOWS PHONE 8" Style="{StaticResource PhoneTextNormalStyle}" />
+            <TextBlock Text="games" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" />
+        </StackPanel>
+
+        <Grid Grid.Row="1" Margin="12,0,12,0">
+            <ListBox x:Name="GameList" SelectionChanged="GameList_SelectionChanged">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="0,0,0,14" Hold="GameItem_Hold" Background="Transparent">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="72" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Border Width="62" Height="62" Background="{StaticResource J2meAccent}" VerticalAlignment="Top">
+                                <Image Source="{Binding Icon}" Stretch="Uniform" Margin="4" />
+                            </Border>
+                            <StackPanel Grid.Column="1" Margin="8,-4,0,0">
+                                <TextBlock Text="{Binding Name}" Style="{StaticResource PhoneTextLargeStyle}" Margin="0" TextTrimming="WordEllipsis" />
+                                <TextBlock Text="{Binding Details}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" />
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <TextBlock x:Name="EmptyText" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}" Visibility="Collapsed"
+                       Text="No games yet. Tap + to add .jar games from the SD card or over Wi-Fi, or open a .jar file from email / the browser." />
+            <TextBlock x:Name="StatusText" VerticalAlignment="Bottom" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}" />
+        </Grid>
+
+        <!-- per-game actions (tap and hold a game) -->
+        <Grid x:Name="ActionPanel" Grid.RowSpan="2" Background="#CC000000" Visibility="Collapsed" Tap="ActionPanel_Tap">
+            <StackPanel VerticalAlignment="Center" Margin="24" Background="{StaticResource PhoneChromeBrush}">
+                <TextBlock x:Name="ActionTitle" Margin="18,18,18,12" Style="{StaticResource PhoneTextLargeStyle}" TextWrapping="Wrap" />
+                <Button Content="Start" Click="ActionStart_Click" />
+                <Button Content="Game settings" Click="ActionSettings_Click" />
+                <Button Content="Remove from list" Click="ActionRemove_Click" />
+                <Button Content="Cancel" Click="ActionCancel_Click" Margin="0,0,0,12" />
+            </StackPanel>
+        </Grid>
+
+        <!-- add games: SD card / Wi-Fi / how to open from email (WP8.0 has no file picker) -->
+        <Grid x:Name="AddPanel" Grid.RowSpan="2" Background="{StaticResource PhoneBackgroundBrush}" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <StackPanel Margin="12,17,12,6">
+                <TextBlock Text="J2ME WINDOWS PHONE 8" Style="{StaticResource PhoneTextNormalStyle}" />
+                <TextBlock Text="add games" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" />
+            </StackPanel>
+            <ScrollViewer Grid.Row="1" Margin="12,0,12,0">
+                <StackPanel>
+                    <TextBlock Text="SD card" Style="{StaticResource PhoneTextLargeStyle}" />
+                    <TextBlock x:Name="SdStatus" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}"
+                               Text="Copy .jar files (and .jad files with the same name) anywhere on the SD card." />
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="SdScanButton" Content="Scan SD card" Click="SdScan_Click" />
+                        <Button x:Name="SdAllButton" Content="Install all" Click="SdInstallAll_Click" IsEnabled="False" />
+                    </StackPanel>
+                    <ListBox x:Name="SdList" SelectionChanged="SdList_SelectionChanged" Margin="12,0,0,12" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Margin="0,6">
+                                    <TextBlock Text="{Binding Name}" FontSize="24" />
+                                    <TextBlock Text="{Binding Folder}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+
+                    <TextBlock Text="Over Wi-Fi" Style="{StaticResource PhoneTextLargeStyle}" Margin="12,12,0,0" />
+                    <TextBlock TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}"
+                               Text="Start the receiver, then open the address below in a browser on a PC or another phone on the same Wi-Fi and choose the .jar files. Keep this screen open while sending." />
+                    <Button x:Name="WifiButton" Content="Start Wi-Fi receiver" Click="Wifi_Click" />
+                    <TextBlock x:Name="WifiAddress" TextWrapping="Wrap" FontSize="30" Foreground="{StaticResource PhoneAccentBrush}"
+                               Margin="12,6,12,2" Visibility="Collapsed" />
+                    <ProgressBar x:Name="WifiProgress" Maximum="100" Margin="0,10,0,4" Foreground="{StaticResource PhoneAccentBrush}" Visibility="Collapsed" />
+                    <TextBlock x:Name="WifiStatus" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}" Margin="12,0,12,6" />
+                    <ListBox x:Name="WifiList" Margin="12,0,12,12" ScrollViewer.VerticalScrollBarVisibility="Disabled" IsHitTestVisible="False">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Margin="0,4">
+                                    <TextBlock Text="{Binding Name}" FontSize="24" TextTrimming="WordEllipsis" />
+                                    <TextBlock Text="{Binding Result}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0" Foreground="{Binding ResultBrush}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+
+                    <TextBlock Text="From email / browser / OneDrive" Style="{StaticResource PhoneTextLargeStyle}" Margin="12,12,0,0" />
+                    <TextBlock TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}" Margin="12,0,12,24"
+                               Text="Open a .jar (or .jad) file there: the phone hands it to this app, which installs it." />
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/add.png" Text="add games" Click="Add_Click" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/questionmark.png" Text="about" Click="About_Click" />
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="sort by name" Click="SortName_Click" />
+                <shell:ApplicationBarMenuItem Text="sort by recently added" Click="SortAdded_Click" />
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+</phone:PhoneApplicationPage>

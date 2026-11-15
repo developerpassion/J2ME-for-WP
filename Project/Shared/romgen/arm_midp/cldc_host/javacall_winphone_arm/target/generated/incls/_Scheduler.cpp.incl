@@ -1,0 +1,6 @@
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/runtime/Scheduler.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/runtime/Throwable.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/handles/EntryActivation.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/debugger/JavaDebugger.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/runtime/WTKProfiler.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/runtime/DeadlockFinder.hpp"

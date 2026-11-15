@@ -1,0 +1,5 @@
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/ROM/BytecodeOptimizer.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/ROM/ConstantPoolRewriter.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/runtime/StackMapDefinitions.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/handles/StackmapList.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/memory/StackmapGenerator.hpp"

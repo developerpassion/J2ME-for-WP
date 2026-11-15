@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest"
+         xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest"
+         xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest"
+         xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
+  <Identity Name="J2MEWP.WP81" Publisher="CN=J2MEWP" Version="0.0.1.0" />
+  <mp:PhoneIdentity PhoneProductId="5c1e7b2a-9d34-4f0b-8c61-3a7e2d9b4f81" PhonePublisherId="1b4c8e2d-7a39-4f60-9d15-6e2a8c3b7d81" />
+  <Properties>
+    <DisplayName>J2ME Windows Phone 8.1</DisplayName>
+    <PublisherDisplayName>J2MEWP</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.3.1</OSMinVersion>
+    <OSMaxVersionTested>6.3.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="x5c1e7b2ay9d34y4f0by8c61y3a7e2d9b4f81x" Executable="AGHost.exe" EntryPoint="MainPage.xaml">
+      <m3:VisualElements DisplayName="J2ME Windows Phone 8.1" Square150x150Logo="Assets\Square150x150Logo.png"
+                         Square44x44Logo="Assets\Square44x44Logo.png" Description="Runs J2ME (MIDP 2.0) games"
+                         ForegroundText="light" BackgroundColor="#525BA0">
+        <m3:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square71x71Logo="Assets\Square71x71Logo.png" />
+        <m3:SplashScreen Image="Assets\SplashScreen.png" />
+      </m3:VisualElements>
+      <Extensions>
+        <Extension Category="windows.backgroundTasks" EntryPoint="AgHost.BackgroundTask">
+          <BackgroundTasks>
+            <Task Type="systemEvent" />
+          </BackgroundTasks>
+        </Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClientServer" />
+  </Capabilities>
+  <Extensions>
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
+        <Path>AgHostSvcs.dll</Path>
+        <ActivatableClass ActivatableClassId="AgHost.BackgroundTask" ThreadingModel="both" />
+      </InProcessServer>
+    </Extension>
+    <!-- C++ component (Runtime/J2MEWPRuntime.vcxproj) -->
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
+        <Path>J2MEWPRuntime.dll</Path>
+        <ActivatableClass ActivatableClassId="J2MEWPRuntime.Core" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="J2MEWPRuntime.GameEntry" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="J2MEWPRuntime.GameSettings" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="J2MEWPRuntime.LcdSurface" ThreadingModel="both" />
+      </InProcessServer>
+    </Extension>
+  </Extensions>
+</Package>

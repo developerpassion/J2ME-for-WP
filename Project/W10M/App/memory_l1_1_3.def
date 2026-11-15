@@ -1,0 +1,7 @@
+; VirtualAllocFromApp/VirtualProtectFromApp from SDK 15063 WindowsApp.lib bind to
+; api-ms-win-core-memory-l1-1-5.dll, which does not exist on W10M 10586 -> the app
+; fails to load at launch. Bind them to the 10240+ contract instead.
+LIBRARY api-ms-win-core-memory-l1-1-3.dll
+EXPORTS
+    VirtualAllocFromApp
+    VirtualProtectFromApp

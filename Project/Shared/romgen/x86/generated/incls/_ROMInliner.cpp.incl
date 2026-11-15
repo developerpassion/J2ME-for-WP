@@ -1,0 +1,6 @@
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/ROM/ROMInliner.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/ROM/MethodInvocationClosure.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/ROM/ROMTools.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/ROM/ROMProfile.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/ROM/ROMOptimizer.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/handles/Signature.hpp"

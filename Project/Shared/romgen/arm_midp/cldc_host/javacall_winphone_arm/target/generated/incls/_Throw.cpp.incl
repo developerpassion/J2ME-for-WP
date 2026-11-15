@@ -1,0 +1,4 @@
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/runtime/JVM.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/handles/EntryActivation.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/utilities/ErrorMessage.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/runtime/Throwable.hpp"

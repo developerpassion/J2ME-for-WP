@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  J2MEWP: CLDC VM + pcsl + MIDP + javacall_winphone as a static library for
+  Windows Phone 8.0 (VS2012 v110_wp80 toolset, run through MSBuild 14), ARM only.
+  The .xap built from it runs on WP 8.0 and 8.1 phones (and W10M).
+  Sources: Shared/jvm/midp_arm_wp81.props (tools/gen_wp81_props.py), same as WP81.
+-->
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM"><Configuration>Debug</Configuration><Platform>ARM</Platform></ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM"><Configuration>Release</Configuration><Platform>ARM</Platform></ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6F1C2B3A-7D44-4E59-9A21-0C3B5E8D1A80}</ProjectGuid>
+    <RootNamespace>JvmCore</RootNamespace>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+  </PropertyGroup>
+  <!-- WP 8.0 uses VCTargetsPath11 (V110), as Ruffle's RuffleWP80Native does -->
+  <PropertyGroup Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &gt;= '11.0'">
+    <VCTargetsPath Condition="'$(VCTargetsPath11)' != '' and '$(VSVersion)' == '' and '$(VisualStudioVersion)' == ''">$(VCTargetsPath11)</VCTargetsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetPlatformIdentifier>Windows Phone</TargetPlatformIdentifier>
+    <TargetPlatformVersion>8.0</TargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v110_wp80</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <!-- Debug also uses the release CRT: WP8.0 phones have no MSVCR110D / vccorlib110d -->
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="PropertySheets">
+    <Import Project="..\..\Shared\props\Common.props" />
+    <!-- J2MEWPVm: thumb2 (default) = cpu/thumb2 VM (Thumb-2 JIT, no ThumbEE). WP8.0/8.1
+         kernels do not run ARM-mode user code reliably (C000001D on a WP8.0 phone).
+         arm = the cpu/arm VM of the W10M app (only for comparison on W10M phones). -->
+    <Import Project="..\..\Shared\jvm\midp_thumb2_wp81.props" Condition="'$(J2MEWPVm)'!='arm'" />
+    <Import Project="..\..\Shared\jvm\midp_arm_wp81.props" Condition="'$(J2MEWPVm)'=='arm'" />
+  </ImportGroup>
+  <PropertyGroup>
+    <GenerateManifest>false</GenerateManifest>
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)obj\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <!-- VS2012 WPSDK armasm needs DLLs that are not on PATH here; the VS2013 one writes the same COFF -->
+    <J2MEWPArmasmExe>$(MSBuildProgramFiles32)\Microsoft Visual Studio 12.0\VC\bin\x86_arm\armasm.exe</J2MEWPArmasmExe>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <SDLCheck>false</SDLCheck>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <!-- J2MEWP_WP81 = "WP8.x Silverlight" code paths; J2MEWP_WP80 = 8.0-only differences.
+           JIT is tried at run time (VirtualProtect RWX); refused -> interpreter. -->
+      <PreprocessorDefinitions>J2MEWP_WP81=1;J2MEWP_WP80=1;J2MEWP_ENABLE_JIT=1;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <!-- C/C++ is Thumb, the interpreter asm is ARM; calls into it go through Thumb thunks. -->
+      <ForcedIncludeFiles Condition="'$(J2MEWPVm)'=='arm'">$(J2MESharedDir)host\arm_thumb_calls.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Debug'">
+    <ClCompile><Optimization>Disabled</Optimization></ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
+    <ClCompile><Optimization>MaxSpeed</Optimization></ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Shared\host\arm_thumb_calls.h" />
+    <MARMASM Include="..\..\Shared\host\arm_thumb_thunks.asm" Condition="'$(J2MEWPVm)'=='arm'" />
+    <ClInclude Include="..\..\Shared\host\jvm_host.h" />
+    <ClCompile Include="..\..\Shared\host\jvm_host.cpp" />
+    <ClCompile Include="..\..\Shared\host\jar_manifest.c">
+      <AdditionalIncludeDirectories>$(PhoneMERoot)midp\src\core\jarutil\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

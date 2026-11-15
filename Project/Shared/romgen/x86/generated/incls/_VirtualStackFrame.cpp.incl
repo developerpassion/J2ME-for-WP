@@ -1,0 +1,7 @@
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/compiler/Location.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/handles/Signature.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/runtime/StackMapDefinitions.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/handles/StackmapList.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/memory/StackmapGenerator.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/compiler/VSFMergeTest.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/utilities/StackUtils.hpp"

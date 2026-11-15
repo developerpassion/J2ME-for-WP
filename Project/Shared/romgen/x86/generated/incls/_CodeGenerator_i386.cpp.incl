@@ -1,0 +1,5 @@
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/handles/Signature.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/cpu/i386/Instructions_i386.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/compiler/Location.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/float/FloatNatives.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/handles/JavaClassObj.hpp"

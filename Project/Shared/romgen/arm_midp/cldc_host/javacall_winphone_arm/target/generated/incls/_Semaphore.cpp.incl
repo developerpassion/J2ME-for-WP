@@ -1,0 +1,3 @@
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/runtime/Semaphore.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/runtime/Scheduler.hpp"
+#include "E:/Projects/J2MEWP/phoneME_feature/cldc/src/vm/share/natives/sni.h"
