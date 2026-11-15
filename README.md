@@ -98,19 +98,17 @@ The app is signed with a self-signed certificate, `CN=J2MEWP`, valid until 2125:
 - `Project/W10M/App/Signing/J2MEWP_Sideload.pfx`: the signing key.
 - `Project/W10M/App/Signing/J2MEWP_Sideload.cer`: the public certificate. Install it on the phone once, before installing the `.appx`/`.appxbundle`.
 
-The key's password is **not** in the repository. To sign your own builds, create `Project/W10M/App/Signing/Signing.local.props` (it is ignored by git):
+- `Project/W10M/App/Signing/Signing.local.props`: the key's password. It is published on purpose, so every build is signed with the same certificate.
 
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <PackageCertificateKeyFile>$(MSBuildThisFileDirectory)J2MEWP_Sideload.pfx</PackageCertificateKeyFile>
-    <PackageCertificatePassword>your password</PackageCertificatePassword>
-  </PropertyGroup>
-</Project>
+To build a signed package from a command prompt (`cmd`), run this at the repository root:
+
+```
+build_w10m.cmd
 ```
 
-If you use your own `.pfx`, its subject must match `Publisher` in `Project/W10M/App/Package.appxmanifest`.
+It finds Visual Studio 2017, builds **Release|ARM** and writes the signed `.appx` (with its `Dependencies` folder and the `.cer`) to `Project/W10M/AppPackages/J2MEW10M/J2MEW10M_<version>_ARM_Test/`. Building **Release|ARM** in Visual Studio signs it the same way.
+
+Because the key is public, the certificate only proves that a package was built from this source tree, not who built it. To sign with your own `.pfx`, point `PackageCertificateKeyFile` and `PackageCertificatePassword` in `Signing.local.props` at it. Its subject must match `Publisher` in `Project/W10M/App/Package.appxmanifest`.
 
 To install without Visual Studio, use the phone's Device Portal (*Apps → Install app*):
 

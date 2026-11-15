@@ -4,9 +4,8 @@ games/*.jad
 Project/out/
 Project/tools/*.log
 
-# W10M signing password (local only; the .pfx itself is published)
+# W10M signing: the .pfx, .cer and Signing.local.props (password) are published
 Project/W10M/App/Signing/*.bak
-Project/W10M/App/Signing/Signing.local.props
 
 # WP8.1 app: assets copied from the W10M app at build time (J2MEWPCopySharedAssets)
 Project/WP81/App/Assets/midp/
